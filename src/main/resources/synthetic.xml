@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+
+    THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
+    FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
+
+-->
+
+<synthetic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xebialabs.com/deployit/synthetic" xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
+
+    <type type="slack.Server" extends="xlrelease.Configuration">
+
+        <property name="url" label="Slack URL" description="Slack Incoming WebHook URL" required="true"/>
+        <property name="userName" label="User name" description="Name to use in the notifications" required="true"/>
+        <property name="userIcon" label="User icon" description="Icon to use in the notifications, it should be a icon emoji" required="true"/>
+        <property name="proxyUrl" category="input" label="Proxy URL" description="Proxy URL to use in format http://username:password@proxyurl:proxyport, leave it in blank if isn't required" required="false"/>
+
+    </type>
+
+    <type type="slack.Notification" extends="xlrelease.PythonScript">
+
+        <!-- Plugin -->
+        <property name="iconLocation" hidden="true" default="slack/logo.png"/>
+        <property name="taskColor" hidden="true" default="#EC8022"/>
+
+        <!-- Inputs -->
+        <property name="server" category="input" label="Server" description="The Slack server definition to use" required="true" referenced-type="slack.Server" kind="ci"/>
+        <property name="channel" category="input" label="Channel" description="The target for the notification, use `#` or `@` to refer to a channel or direct message" required="true"/>
+        <property name="message" category="input" label="Message" description="The notification message text" required="true"/>
+
+    </type>
+
+</synthetic>

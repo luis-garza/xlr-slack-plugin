@@ -1,0 +1,14 @@
+// Plugins to use
+plugins {
+    id "java"
+    id "com.github.hierynomus.license" version "0.12.1"
+}
+
+// License definition
+license {
+    header rootProject.file('src/main/license/xebialabs_community.license')
+    strictCheck true
+}
+
+// Project version
+version="1.0.0"
