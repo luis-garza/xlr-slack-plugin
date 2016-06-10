@@ -1,0 +1,12 @@
+language: java
+before_install:
+  - chmod +x gradlew
+deploy:
+  provider: releases
+  api_key:
+    secure: MFjhnoRMifVfvAg+Zs3NY6Jq5cDV+aHgYF0RfXhLzRF3Xa68PnASVATYTlDrPMjtoZroikctkMCxc1w5dWMBO3/SGW3LK2BcavMCZLNPYAhugC+DO14tiw8RuExkZuuwgvrZNu2A91ofXMMSBwyVlx2SXV17/fGoNVs4/EN2XvHuUyrj/277bpN4hby+elLtm7bufQpbWw6sustMEClANvroINFWCD7HziN9lLcoRz+7Y6lgGj7SAxiWUR7UmIOMejXeQUPQNgTbRqe9eHJZvms9gj7V/q6BtNIAnKXA6OmoLYXNGmPqIXIv1xtgorXpxihhvt01PY24tj2xD+XfzEyGGPYXg4332UsoeHL3uToZzFjmQkYApAMrBmglyg1BPu8IiUXtZEbGxS5L3a3kZ4BW8GamfpR2V52z2ErB3FN2zT/Ac9AYadX7MW4N9bXtx+x7zdDVgp+CApwMvyBrc9aI6whR8bTiSP22jPlx8gj24qreDw3aCyFsiFoKFts1fwDmaN46K7v3hpiybldOU46/J1qDOyZtjZHk1CoQ6M+ohCKgZb1Jrvx+2gz0jStOELifZOSJrDjDP5+dQ+sOa36TbhK2jA8q7lacBM6Kxenf6VaVQNNq01jG1In8mfyqQ2NAFkkLGJbYENzn30VjjzYxPdviLxFRe9DzIzNy5qA=
+  file: build/libs/xlr-slack-plugin-1.0.0.jar
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: luis-garza/xlr-slack-plugin
